@@ -22,7 +22,7 @@ window.HelloWorldWidget = {
   mount: () => {
     ReactDOM.render(
       <React.StrictMode>
-        <App domElement={widget} />
+        <App />
       </React.StrictMode>,
       widget
     );
