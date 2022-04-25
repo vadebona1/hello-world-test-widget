@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // Select all instances of the widget
-const WidgetDivs = document.querySelectorAll('.hello-world-widget');
+const WidgetDivs = document.querySelectorAll('#hello-world-widget');
 
 WidgetDivs.forEach(div => {
   ReactDOM.render(
