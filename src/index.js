@@ -4,28 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Select all instances of the widget
-// const WidgetDivs = document.querySelectorAll('#hello-world-widget');
-
-// WidgetDivs.forEach(div => {
-//   ReactDOM.render(
-//     <React.StrictMode>
-//       <App domElement={div} />
-//     </React.StrictMode>,
-//     div
-//   );
-// });
-
-window.HelloWorldWidget = {
-  mount: () => {
-    const el = document.getElementById('hello-world-widget');
-    ReactDOM.render(<App />, el);
-  },
-  unmount: () => {
-    const el = document.getElementById('hello-world-widget');
-    ReactDOM.unmountComponentAtNode(el);
+var HelloWorldWidget = (() => {
+  const el = document.getElementById('hello-world-widget');
+  return {
+    mount: props => {
+      ReactDOM.render(<App {...props} />, el);
+    },
+    unmount: () => {
+      ReactDOM.unmountComponentAtNode(el);
+    }
   }
-}
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
